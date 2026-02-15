@@ -1,0 +1,95 @@
+1) Var -
+
+//Declaring Var Variables old and risky can be reassign nd redeclared. 
+var num = 10;
+console.log(num); //OP-10
+var num = 20;
+console.log(num);  //OP-20
+
+//Hoisted to the top with undefined value.
+console.log(a); //undefined
+var a=0;
+
+// var is function-scoped (not block-scoped)
+
+function test() {
+    if (true) {
+        var x = 10;
+    }
+
+    console.log(x); // OP - 10 (accessible outside block)
+}
+
+test();
+
+// But not accessible outside the function
+console.log(x); //Error
+
+2) Let -
+
+// Declaring let variables (modern and safer).
+// Can be reassigned but cannot be redeclared in the same scope.
+
+let num = 10;
+console.log(num); // OP - 10
+
+num = 20; // reassigned
+console.log(num); // OP - 20
+
+// let num = 30; // Error (cannot redeclare in same scope)
+
+// Not hoisted like var (in Temporal Dead Zone)
+
+console.log(a); // Error
+let a = 0;
+
+// let is block-scoped
+
+function test() {
+    if (true) {
+        let x = 10;
+        console.log(x); // OP - 10 (inside block)
+    }
+
+    console.log(x); // Error (not accessible outside block)
+}
+
+test();
+
+3) Const -
+
+// Declaring const variables.
+// Cannot be reassigned and cannot be redeclared.
+
+const num = 10;
+console.log(num); // OP - 10
+
+// num = 20; // Error (cannot reassign)
+// const num = 30; // Error (cannot redeclare)
+
+// Not hoisted like var (in Temporal Dead Zone)
+
+console.log(a); // Error
+const a = 0;
+
+// const is block-scoped
+
+function test() {
+    if (true) {
+        const x = 10;
+        console.log(x); // OP - 10 (inside block)
+    }
+
+    console.log(x); // Error (not accessible outside block)
+}
+
+test();
+
+// Important: Objects and arrays declared with const
+// cannot be reassigned, but their values can be modified.
+
+const arr = [1, 2];
+arr.push(3);
+console.log(arr); // OP - [1, 2, 3]
+
+// arr = [4, 5]; // Error (cannot reassign)
