@@ -1,0 +1,80 @@
+JavaScript Data Types
+
+JavaScript has 8 data types.
+
+1) Primitive Data Types
+// Number
+let num = 10;
+console.log(typeof num); // number
+
+// String
+let name = "John";
+console.log(typeof name); // string
+
+// Boolean
+let isActive = true;
+console.log(typeof isActive); // boolean
+
+// Undefined
+let x;
+console.log(typeof x); // undefined
+
+// Null
+let y = null;
+console.log(typeof y); // object (known JS bug)
+
+// BigInt
+let big = 12345678901234567890n;
+console.log(typeof big); // bigint
+
+// Symbol
+let sym = Symbol("id");
+console.log(typeof sym); // symbol
+
+Primitive types:
+
+Stored by value
+
+Immutable
+
+2) Non-Primitive Data Type
+// Object
+let obj = {
+    name: "John",
+    age: 22
+};
+console.log(typeof obj); // object
+
+// Array (special type of object)
+let arr = [1, 2, 3];
+console.log(typeof arr); // object
+
+// Function (also object)
+function test() {}
+console.log(typeof test); // function
+
+Non-primitive:
+
+Stored by reference
+
+Mutable
+
+5) Type System in JavaScript
+
+JavaScript is:
+
+1) Dynamically Typed
+let value = 10;
+console.log(typeof value); // number
+
+value = "Hello";
+console.log(typeof value); // string
+
+You can change the type of a variable at runtime.
+
+2) Weakly Typed (Type Coercion Happens)
+console.log("5" + 2);  // "52" (number converted to string)
+console.log("5" - 2);  // 3 (string converted to number)
+console.log(true + 1); // 2 (true becomes 1)
+
+JavaScript automatically converts types in some operations.
