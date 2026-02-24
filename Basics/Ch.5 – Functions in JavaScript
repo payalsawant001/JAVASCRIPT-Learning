@@ -1,0 +1,70 @@
+Functions in JavaScript
+
+A function is a reusable block of code that performs a task.
+
+1) Function Declaration
+function greet() {
+    console.log("Hello");
+}
+
+greet(); // Hello
+2) Function with Parameters
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+greet("John"); // Hello John
+3) Function with Return Value
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(5, 3);
+console.log(result); // 8
+4) Function Expression
+const multiply = function(a, b) {
+    return a * b;
+};
+
+console.log(multiply(4, 5)); // 20
+5) Arrow Function
+const subtract = (a, b) => {
+    return a - b;
+};
+
+console.log(subtract(10, 4)); // 6
+
+Short form:
+
+const square = n => n * n;
+
+console.log(square(5)); // 25
+6) Default Parameters
+function greet(name = "Guest") {
+    console.log("Hello " + name);
+}
+
+greet(); // Hello Guest
+7) Rest Parameters
+function sum(...numbers) {
+    let total = 0;
+    for (let num of numbers) {
+        total += num;
+    }
+    return total;
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+Quick Summary
+
+Function Declaration → normal function
+
+Function Expression → function stored in variable
+
+Arrow Function → shorter syntax
+
+return → sends value back
+
+Parameters → input to function
+
+Rest → multiple arguments
